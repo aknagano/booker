@@ -1,0 +1,18 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h4>タイトル</h4>
+
+<p><%= @book.title %></p>
+
+<h4>本文</h4>
+<p><%= @book.body %></p>
+
+<th><%= link_to "edit", edit_book_path(@book.id) %></th>
+<th><%= link_to "back", books_path %></th>
